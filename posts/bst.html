@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS framework -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-ruby.min.js"></script>
+
+  <title>Binary Search Trees</title>
+</head>
+<body>
+  <div class="container mx-auto my-5">
+
+    <h1 class="text-4xl font-bold text-center">Binary Search</h1><br>
+
+    <img class="mx-auto block" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="BST"><br>
+
+    <div class="prose">
+      <div class="container mx-auto">
+        <div class="max-w-full">
+          Time Complexity: O(N)
+          Auxiliary Space: O(log(N)) for recursive stack space for the height of the tree
+        </div>
+        <div class="max-w-full">
+          <pre class="bg-gray-200 ">
+            <code class="language-ruby">
+              class Node
+                attr_accessor :value, :left, :right
+
+                def initialize(value, left=nil, right=nil)
+                  @value = value
+                  @left = left
+                  @right = right
+                end
+
+                def self.preorder(node)
+                  return unless node
+
+                  puts node.value
+                  preorder(node.left)
+                  preorder(node.right)
+                end
+              end
+
+              class Array
+                def to_bst(arr=self)
+                  return if arr.empty?
+
+                  mid = arr.length / 2
+
+                  root = Node.new(arr[mid])
+                  root.left = to_bst(arr[0...mid])
+                  root.right = to_bst(arr[mid + 1...arr.length])
+
+                  root
+                end
+              end
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
