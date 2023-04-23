@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="elixir linked list">
+  <meta name="keywords" content="engineering, algorithms, eric brohman, software, development, elixir, linked list, recursion, algorithm, algorithms">
+  <meta name="author" content="Eric Brohman">
+
+  <!-- Tailwind CSS framework -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-elixir.min.js"></script>
+
+  <title>Working with linked lists in Elixir</title>
+</head>
+<body>
+  <div class="container mx-auto my-5">
+
+    <h1 class="text-4xl font-bold text-center">Reversing a linked list using recursion </h1><br>
+    <div class="prose">
+      <p class="mx-auto w-1/2 text-base mx-w-prose">
+        Working with lists in Elixir is pretty fun and intuitive.  We can use pattern matching and recursion to destructure our list and reassemble a new one, because the starting list is immutible. <br><br>
+
+        In order to accomplish this we define a <code>rev</code> function within our <code>LinkedList</code> module with multiple signatures to pattern match against our list and eventually bottom out when we encounter an empty list. <br><br>
+
+        Our first and only public <code>rev</code> function takes a default argument to pass to our private <code>_rev</code> function.  We then begin to fill this empty list in reverse order. <br><br>
+      </p>
+      <div class="container mx-auto">
+        <div class="mx-auto w-1/2">
+          <pre class="bg-gray-200 ">
+            <code class="language-elixir">
+              defmodule LinkedList do
+                def rev(list, reversed \\ []) do
+                  _rev(list, reversed)
+                end
+
+                defp _rev([], reversed) do
+                  reversed
+                end
+
+                defp _rev([head | tail], reversed) do
+                  _rev(tail, [head | reversed])
+                end
+              end
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
