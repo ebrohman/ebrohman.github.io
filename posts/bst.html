@@ -28,7 +28,9 @@
       <div class="container mx-auto">
         <div class="mx-auto w-1/2 text-base mx-w-prose">
           Time Complexity: O(N)
-          Auxiliary Space: O(log(N)) for recursive stack space for the height of the tree
+          Auxiliary Space: O(log(N)) for recursive stack space for the height of the tree <br><br>
+
+          Given a sorted array, create a BST:
         </div>
         <div class="mx-auto w-1/2">
           <pre class="bg-gray-200 ">
@@ -51,8 +53,8 @@
                 end
               end
 
-              class Array
-                def to_bst(arr=self)
+              class SortedArray
+                def self.to_bst(arr=self)
                   return if arr.empty?
 
                   mid = arr.length / 2
