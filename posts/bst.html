@@ -51,6 +51,18 @@
                   preorder(node.left)
                   preorder(node.right)
                 end
+
+                def self.search(root, value)
+                  return "not found" if root.nil?
+
+                  return root if root.value == value
+
+                  if value < root.value
+                    search(root.left, value)
+                  else
+                    search(root.right, value)
+                  end
+                end
               end
 
               class SortedArray
