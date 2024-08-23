@@ -18,53 +18,25 @@
     }
   </style>
 
-  <title>My Blog</title>
+  <title>Eric Brohman</title>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-  <!-- Left-hand side author info -->
-  <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-    <div class="md:w-1/3 md:pr-12">
-      <img class="rounded-full w-48 h-48 md:w-64 md:h-64 mb-4 md:mb-0" src="https://media.licdn.com/dms/image/C4E03AQEEhfHkgQwSKA/profile-displayphoto-shrink_800_800/0/1633039895431?e=1686182400&v=beta&t=X1jIiDfCyGPW3V9hmP0-ulXemPz0DQPjAHQeAvvqvuo" alt="Author Image">
-    </div>
-    <div class="flex-1">
-      <p class="uppercase tracking-loose w-full">Eric Brohman</p>
-      <h1 class="text-2xl md:text-3xl lg:text-4xl leading-tight mt-4">Hey there! I'm Eric</h1>
-      <p class="mt-4 text-gray-600">I'm an engineer I write about programming, woodworking, bikes, and anything else that sparks my interest!</p>
-    </div>
-  </div>
+  <!-- Container to hold the layout -->
+  <div class="container mx-auto flex flex-col md:flex-row items-start my-12 space-y-4 md:space-y-0 md:space-x-8">
 
-  <!-- Right-hand side blog post listings -->
-  <div class="container mx-auto flex flex-wrap flex-row py-6 gap-y-8">
-
-    <!-- Listing -->
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <div class="bg-white rounded-lg overflow-hidden shadow-md">
-        <a href="./posts/bst.html">
-          <img class="w-auto h-48 mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="BST">
-        </a>
-        <div class="p-4">
-          <a href="./posts/bst.html" class="block text-gray-800 font-semibold mb-2 hover:text-gray-600">Binary Search Trees</a>
-          <p class="text-gray-700 text-sm">A simple implementation</p>
-        </div>
-      </div>
+    <!-- Left-hand side: Picture and Name -->
+    <div class="md:w-1/3 flex flex-col items-center">
+      <img class="rounded-full w-48 h-48 md:w-64 md:h-64 mb-4" src="me.jpeg" alt="Author Image">
+      <h1 class="text-2xl md:text-3xl lg:text-4xl leading-tight mt-4">Let's get in touch</h1>
     </div>
-    <!-- Listing -->
 
-    <!-- Listing -->
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <div class="bg-white rounded-lg overflow-hidden shadow-md">
-        <a href="./posts/merge_sort.html">
-          <img class="w-auto h-48 p-4 mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Merge_sort_algorithm_diagram.svg/1236px-Merge_sort_algorithm_diagram.svg.png?20180709142035" alt="Merge Sort">
-        </a>
-        <div class="p-4">
-          <a href="./posts/merge_sort.html" class="block text-gray-800 font-semibold mb-2 hover:text-gray-600">Merge Sort</a>
-          <p class="text-gray-700 text-sm">a good sorting algorithm</p>
-        </div>
-      </div>
+    <!-- Right-hand side: PDF Viewer -->
+    <div class="md:w-2/3">
+      <embed src="resume.pdf" width="100%" height="800" type="application/pdf" class="border rounded-lg shadow-lg">
     </div>
-    <!-- Listing -->
 
   </div>
+
 </body>
 </html>
